@@ -601,7 +601,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af9e40d10cbcd8945a93114bc8178868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaler: 0
+  scaler: 0.1
 --- !u!54 &769197753
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -911,7 +911,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af9e40d10cbcd8945a93114bc8178868, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  scaler: 0
+  scaler: 0.1
 --- !u!54 &2081728527
 Rigidbody:
   m_ObjectHideFlags: 0
