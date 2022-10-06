@@ -12,9 +12,6 @@ public class BallMovement : MonoBehaviour
     private Vector3 desiredPos;
     private bool right, left;
     public float offset;
-    public Transform ball, end;
-    public LineRenderer line;
-    public float timeOffset;
 
     // Update is called once per frame
     void Update()
@@ -31,9 +28,9 @@ public class BallMovement : MonoBehaviour
             left = false;
         }
         if (right)
-            ratio += (speed * Time.deltaTime)-timeOffset;
+            ratio += (speed * Time.deltaTime);
         else if (left)
-            ratio += (-speed * Time.deltaTime)+timeOffset;
+            ratio += (-speed * Time.deltaTime);
         desiredPos = Vector3.Lerp(targetA.position, targetB.position, ratio);
         desiredPos = new Vector3(desiredPos.x, desiredPos.y + height.Evaluate(ratio) + offset, desiredPos.z);
         transform.position = desiredPos;

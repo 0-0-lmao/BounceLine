@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class LineRender : MonoBehaviour
 {
-    public Transform ball, end;
+    public Transform ball;
     public LineRenderer line;
     private Vector3 desiredPos;
 
@@ -21,7 +21,7 @@ public class LineRender : MonoBehaviour
 
         //set potion start
         line.SetPosition(0, ball.position);
-        for (int i = 1; i < line.positionCount-1; i++)
+        for (int i = 1; i < line.positionCount; i++)
         {
             //find out if distance is greater than Dist variable
             if (Vector3.Distance(line.GetPosition(i-1), line.GetPosition(i)) > dist)
@@ -31,17 +31,15 @@ public class LineRender : MonoBehaviour
                 //Set Position Needed
                 line.SetPosition(i, desiredPos);
             }
-            if (i == line.positionCount)
-            {
-                //
-            }
 
             /*if (i >= line.positionCount - 1)
             {
                 desiredPos = Vector3.Lerp(ball.position, end.position, 1);
             }
             */
+            //Debug.Log(i);
         }
+        //if (line.GetPosition(line.positionCount) 
         //line.SetPosition(line.positionCount-1, end.position);
     }
 }
