@@ -26,17 +26,22 @@ public class LineRender : MonoBehaviour
             //find out if distance is greater than Dist variable
             if (Vector3.Distance(line.GetPosition(i-1), line.GetPosition(i)) > dist)
             {
-                //Set distance closer
-
+                //Get position needed
+                desiredPos = Vector3.Lerp(ball.position, line.GetPosition(i), i / (float)line.positionCount);
+                //Set Position Needed
+                line.SetPosition(i, desiredPos);
             }
-            desiredPos = Vector3.Lerp(ball.position, end.position, i / (float)line.positionCount);
-            line.SetPosition(i, desiredPos);
+            if (i == line.positionCount)
+            {
+                //
+            }
 
-            if (i >= line.positionCount - 1)
+            /*if (i >= line.positionCount - 1)
             {
                 desiredPos = Vector3.Lerp(ball.position, end.position, 1);
             }
+            */
         }
-        line.SetPosition(line.positionCount-1, end.position);
+        //line.SetPosition(line.positionCount-1, end.position);
     }
 }
