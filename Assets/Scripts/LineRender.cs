@@ -28,6 +28,7 @@ public class LineRender : MonoBehaviour
             {
                 //Get position needed
                 desiredPos = Vector3.Lerp(ball.position, line.GetPosition(i), i / (float)line.positionCount);
+                desiredPos.z = 0f;
                 //Set Position Needed
                 line.SetPosition(i, desiredPos);
             }

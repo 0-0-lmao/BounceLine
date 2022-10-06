@@ -4,20 +4,23 @@ using UnityEngine;
 
 public class CubeMove : MonoBehaviour
 {
-    public float scaler;
-    public AnimationCurve animCurve;
-    private bool bounce;
-    private Vector3 orginalPos;
+    //public float scaler;
+    //public AnimationCurve animCurve;
+    //private bool bounce;
+    private Vector3 newScale;
 
-    private void Start()
-    {
-        orginalPos = transform.position;
-    }
     private void OnTriggerEnter(Collider Other)
     {
         //Debug.Log("Hit");
-        scaler = 0f;
-        bounce = true;
+        newScale = transform.localScale;
+        newScale.y = 1f;
+        transform.localScale = newScale;
+       
+    }
+
+    private void OnTriggerExit(Collider other)
+    {
+        transform.localScale = new Vector3(1f,1.1f, 1f);
     }
     private void Update()
     {
