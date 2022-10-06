@@ -15,7 +15,7 @@ public class CubeMove : MonoBehaviour
     }
     private void OnTriggerEnter(Collider Other)
     {
-        Debug.Log("Hit");
+        //Debug.Log("Hit");
         scaler = 0f;
         bounce = true;
     }
